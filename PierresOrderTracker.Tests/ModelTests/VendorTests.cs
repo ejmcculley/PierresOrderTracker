@@ -1,11 +1,18 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Collections.Generic;
 using PierresOrderTracker.Models;
+using System;
 
 namespace PierresOrderTracker.Tests
 {
   [TestClass]
-  public class VendorTests
+  public class VendorTests : IDisposable
   {
+    public void Dispose()
+    {
+      Vendor.ClearAll();
+    }
+    
     [TestMethod]
     public void VendorConstructor()
     {
@@ -62,6 +69,16 @@ namespace PierresOrderTracker.Tests
       string result = newVendor.Description;
 
       Assert.AreEqual(vendorDescription, result);
+    }
+    [TestMethod]
+    public void GetVendorId()
+    {
+      string vendorName = "vendorName";
+      Vendor newVendor = new Vendor(vendorName, "vendorAddress", "vendorEmail", "vendorPhone", "vendorDescription");
+
+      int result = newVendor.Id;
+
+      Assert.AreEqual(1, result);
     }
 
     // [TestMethod]
