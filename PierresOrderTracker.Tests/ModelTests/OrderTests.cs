@@ -51,5 +51,17 @@ namespace PierresOrderTracker.Tests
 
       CollectionAssert.AreEqual(newList, result);
     }
+    public void GetAllReturnsList()
+    {
+    string orderDescription01 = "3 loaves of bread";
+    string orderDescription02 = "3 pastries";
+    Order newOrder1 = new Order(orderDescription01);
+    Order newOrder2 = new Order(orderDescription02);
+    List<Order> newList = new List<Order> { newOrder1, newOrder2 };
+
+    List<Order> result = Order.GetAll();
+
+    CollectionAssert.AreEqual(newList, result);
+    }
   }
 }
