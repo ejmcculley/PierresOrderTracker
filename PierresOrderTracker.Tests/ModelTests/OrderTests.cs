@@ -12,8 +12,19 @@ namespace PierresOrderTracker.Tests
     [TestMethod]
     public void OrderConstructor()
     {
-      Order newOrder = new Order(3, 3);
+      Order newOrder = new Order("order description");
       Assert.AreEqual(typeof(Order), newOrder.GetType());
+    }
+
+    [TestMethod]
+    public void GetOrderDescription()
+    {
+      string orderDescription = "order description";
+      Order newOrder = new Order(orderDescription);
+
+      string result = newOrder.OrderDescription;
+
+      Assert.AreEqual(orderDescription, result);
     }
   }
 }
