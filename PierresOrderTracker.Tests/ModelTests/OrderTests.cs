@@ -26,5 +26,17 @@ namespace PierresOrderTracker.Tests
 
       Assert.AreEqual(orderDescription, result);
     }
+    [TestMethod]
+    public void SetOrderDescription()
+    {
+      string orderDescription = "order description";
+      Order newOrder = new Order(orderDescription);
+
+      string changedOrder = "changed order";
+      newOrder.OrderDescription = changedOrder;
+      string result = newOrder.OrderDescription;
+
+      Assert.AreEqual(changedOrder, result);
+    }
   }
 }
