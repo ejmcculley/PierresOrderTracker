@@ -94,5 +94,17 @@ namespace PierresOrderTracker.Tests
 
       CollectionAssert.AreEqual(newList, result);
     }
+    [TestMethod]
+    public void FindVendor()
+    {
+      string vendorName01 = "vendorName01";
+      string vendorName02 = "vendorName02";
+      Vendor newVendor1 = new Vendor(vendorName01, "vendorAddress", "vendorEmail", "vendorPhone", "vendorDescription");
+      Vendor newVendor2 = new Vendor(vendorName02, "vendorAddress", "vendorEmail", "vendorPhone", "vendorDescription");
+
+      Vendor result = Vendor.Find(2);
+
+      Assert.AreEqual(newVendor2, result);
+    }
   }
 }
