@@ -51,6 +51,7 @@ namespace PierresOrderTracker.Tests
 
       CollectionAssert.AreEqual(newList, result);
     }
+    [TestMethod]
     public void GetAllReturnsList()
     {
     string orderDescription01 = "3 loaves of bread";
@@ -62,6 +63,18 @@ namespace PierresOrderTracker.Tests
     List<Order> result = Order.GetAll();
 
     CollectionAssert.AreEqual(newList, result);
+    }
+    [TestMethod]
+    public void FindOrder()
+    {
+      string orderDescription01 = "orderDescription01";
+      string orderDescription02 = "orderDescription02";
+      Order newOrder1 = new Order(orderDescription01);
+      Order newOrder2 = new Order(orderDescription02);
+
+      Order result = Order.Find(2);
+
+      Assert.AreEqual(newOrder2, result);
     }
   }
 }
