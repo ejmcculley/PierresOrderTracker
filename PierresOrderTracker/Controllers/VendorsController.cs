@@ -5,7 +5,7 @@ using PierresOrderTracker.Models;
 
 namespace PierresOrderTracker.Controllers
 {
-  public class CategoriesController : Controller
+  public class VendorsController : Controller
   {
 
     [HttpGet("/vendors")]
